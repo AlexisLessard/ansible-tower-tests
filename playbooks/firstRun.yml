@@ -1,0 +1,31 @@
+---
+- name: Première configuration d'un hôte
+  hosts: all
+  remote_user: root
+  tasks:
+        - name: S'assurer que utilisateur existe
+          user:
+                name: ansible
+                state: present
+        - name: S'assurer que l'utilisateur accepte la clé publique
+          authorized_key:
+                user: ansible
+                state: present
+                key: "{{ lookup( 'file', '{{ ansible_ssh_public_key_file}}' ) }}" 
+        - name: S'assurer que l'utilisateur ansible est sudoer
+          lineinfile:
+                dest: /etc/sudoers
+                state: present
+                regexp: '^ansible ALL \='
+                line: 'ansible ALL=(ALL) NOPASSWD:ALL'
+                validate: 'visudo -cf %s'
+
+
+
+
+
+
+
+
+
+

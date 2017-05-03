@@ -1,0 +1,65 @@
+---
+- hosts: all
+  tasks:
+  - name: affichage du remote user
+    debug:
+        var: remote_user
+  - name: visualisation du nom d'hote ansible local
+    debug: 
+        var: ansible_hostname
+    delegate_to: 127.0.0.1 
+  - name: visualisation du nom d'hote ansible inventaire
+    debug:
+        var: inventory_hostname 
+  - name: visualisation du nom d`hote distant
+    debug:
+        var: ansible_hostname
+  - name: path de la clé privé
+    debug:
+        var: ansible_ssh_private_key_file 
+  - name: path de la clé publique
+    debug:
+        var: ansible_ssh_public_key_file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
