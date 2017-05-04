@@ -1,2 +1,5 @@
 ---
 # defaults file for roleTest
+
+roleTest_message: "le message par défaut est répété une fois"
+roleTest_repetition: 1

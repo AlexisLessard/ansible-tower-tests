@@ -1,2 +1,16 @@
 ---
 # tasks file for roleTest
+#
+#- name: Message
+#  debug:
+#        var: roleTest_message
+#- name: repetition
+#  debug:
+#        var: roleTest_repetition
+#
+
+- name: Ajout du nouveau motd de test  
+  template:
+    src: motd.j2
+    dest: /etc/motd
+  become: yes
