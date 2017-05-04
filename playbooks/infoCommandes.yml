@@ -14,7 +14,7 @@
         register: command_key_folder
         
       - name: obtention du working directory
-        local_action: command echo "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+        local_action: command eval echo "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
         register: command_working_directory
 
       - name: affichage de l'utilisateur
