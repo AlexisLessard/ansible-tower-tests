@@ -10,7 +10,7 @@
         register: command_home_folder
       
       - name: list du dossier de la clé
-        local_action:  command ls /usr/share/ansible/key/
+        local_action:  command ls /var/lib/awx 
         register: command_key_folder
         ignore_errors: yes
 
