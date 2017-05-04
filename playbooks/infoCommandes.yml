@@ -2,15 +2,15 @@
   hosts: 127.0.0.1
   tasks:
       - name: Whoami 
-        command: whoami
+        local_action: command whoami
         register: command_identity
         
       - name: list du dossier home
-        command: ls ~
+        local_action: command ls ~
         register: command_home_folder
       
       - name: list du dossier de la clé
-        command: ls /usr/share/ansible/key/
+        local_action:  command ls /usr/share/ansible/key/
         register: command_key_folder
 
       - name: affichage de l'utilisateur
