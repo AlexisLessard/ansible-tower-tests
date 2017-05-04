@@ -1,0 +1,26 @@
+- name: Playbook d'exploration de commandes
+  hosts: 127.0.0.1
+  tasks:
+      - name: Whoami 
+        command: whoami
+        register: command_identity
+        
+      - name: list du dossier home
+        command: ls ~
+        register: command_home_folder
+      
+      - name: list du dossier de la clé
+        command: ls /usr/share/ansible/key/
+        register: command_key_folder
+
+      - name: affichage de l'utilisateur
+        debug:
+                var: command_identity.stdout
+
+      - name: affichage du dossier home
+        debug:
+                var: command_home_folder.stdout_lines
+
+      - name: affichage du dossier de la clé
+        debug:
+                var: command_key_folder.stdout_lines

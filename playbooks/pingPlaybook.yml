@@ -1,0 +1,7 @@
+---
+- name: Test de connexion avec ping
+  hosts: all
+  tasks:
+        - name: Connexion avec ping
+          ping:
+
