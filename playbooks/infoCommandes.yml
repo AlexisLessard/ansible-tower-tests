@@ -12,6 +12,7 @@
       - name: list du dossier de la clé
         local_action:  command ls /usr/share/ansible/key/
         register: command_key_folder
+        ignore_error: yes
 
       - name: affichage de l'utilisateur
         debug:
