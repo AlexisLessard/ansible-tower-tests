@@ -12,7 +12,7 @@
       - name: list du dossier de la clé
         local_action:  command ls /var/lib/awx 
         register: command_key_folder
-        ignore_errors: yes
+        
 
       - name: affichage de l'utilisateur
         debug:
