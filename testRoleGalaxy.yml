@@ -2,4 +2,4 @@
 - name: playbook pour appeler un role de testMotd
   hosts: all
   roles:
-        - frank6866.rabbitmq 
+        - sfromm.mariadb
